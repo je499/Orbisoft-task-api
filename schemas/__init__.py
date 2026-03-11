@@ -20,7 +20,7 @@ class UserResponse(BaseModel):
     email: str
     
     class Config:
-        from_attributes = True  # Convert database objects to JSON
+        from_attributes = True  # Convert database objects to JSON to allow for easy response
 
 # When creating a task
 class TaskCreate(BaseModel):
