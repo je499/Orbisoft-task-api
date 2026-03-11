@@ -25,11 +25,11 @@ class UserResponse(BaseModel):
 # When creating a task
 class TaskCreate(BaseModel):
     title: str
-    description: Optional[str] = None  # Optional field
+    description: Optional[str] = None  # Optional field, defaults to None if not provided
 
 # When updating a task
 class TaskUpdate(BaseModel):
-    title: Optional[str] = None  # All fields optional
+    title: Optional[str] = None  # All fields optional sice we might only want to update one of them
     description: Optional[str] = None
     completed: Optional[bool] = None
 
@@ -48,4 +48,4 @@ class TaskResponse(BaseModel):
 # What we send back after login
 class Token(BaseModel):
     access_token: str  # The JWT token
-    token_type: str  # Always "bearer"
+    token_type: str  # Always "bearer", tells the client how to use the token
